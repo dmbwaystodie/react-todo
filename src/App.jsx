@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import "./App.scss";
 
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 function App() {
   const [inputValue, setInputValue] = useState("");
   const [tasks, setTasks] = useState(() => {
@@ -93,20 +95,26 @@ function App() {
           </button>
         </div>
         <div className="tasks">
-          {filteredTasks.map((task) => (
-            <div className="task" key={task.id}>
-              <p
-                className={task.completed ? "done" : ""}
-                onClick={() => toggleCompleted(task.id)}
-              >
-                {task.text}
-              </p>
-              <button onClick={() => remove(task.id)}>remove</button>
-            </div>
-          ))}
+          {filteredTasks.length === 0 ? (
+            <p className="empty">no task yet</p>
+          ) : (
+            filteredTasks.map((task) => (
+              <div className="task" key={task.id}>
+                <p
+                  className={task.completed ? "done" : ""}
+                  onClick={() => toggleCompleted(task.id)}
+                >
+                  | {task.text}
+                </p>
+                <button onClick={() => remove(task.id)}><i className="bi bi-trash3"></i></button>
+              </div>
+            ))
+          )}
         </div>
-        <p>uncompleted: {tasks.length - completedCount}</p>
-        <p>completed: {completedCount}</p>
+        <div className="counter">
+          <p>uncompleted: {tasks.length - completedCount}</p>
+          <p>completed: {completedCount}</p>
+        </div>
       </div>
     </div>
   );
