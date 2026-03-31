@@ -1,13 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
-.green {
-  background: green;
-  color: white;
+.title {
+  letter-spacing: 2px;
 }
 
-.red {
-  background: red;
-  color: white;
+.filters {
+  button {
+    height: 32px;
+    width: 70px;
+    font-size: 14px;
+
+    background-color: rgb(43, 100, 119);
+    color: white;
+    border-radius: 10px;
+    border: none;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    &:active {
+      transform: scale(0.97);
+    }
+  }
 }
 
 #root,
@@ -22,6 +37,10 @@ body {
   padding: 0px;
   font-family: "Roboto", sans-serif;
 }
+.wrapper {
+  background: linear-gradient(to bottom, bisque, #ef7b6c);
+  height: 70%;
+}
 
 .app {
   display: flex;
@@ -29,7 +48,6 @@ body {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  
 }
 
 .form {
@@ -40,10 +58,8 @@ body {
   padding-top: 15px;
   width: 400px;
   height: 75px;
-  background-color: bisque;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  
 
   ::placeholder {
     text-align: center;
@@ -75,7 +91,6 @@ body {
 }
 
 .tasks {
-  background: linear-gradient(to bottom, bisque, #ef7b6c);
   width: 400px;
   min-height: 200px;
   max-height: 400px;
