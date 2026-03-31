@@ -14,3 +14,5 @@ Simple todo list application built with React.
 - React (useState)
 - SCSS
 - Vite
+
+![Uploading изображение.png…]()
